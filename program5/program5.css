@@ -1,0 +1,38 @@
+h1{
+    color:green;
+    text-align:CENTER;
+    
+    }
+ form{
+     width:600px;
+      margin:auto;
+      background-color:white;
+      padding:20px;
+      border:2px  solid darkblue;
+      border-radius:10px;
+      }
+ fieldset{
+           border:2px solid blue;
+           padding:15px;
+           }
+ legend{
+        color:darkblue;
+        font-weight:bold;
+        }
+ label{
+         font-weight:bold;
+         }
+button{
+        padding:8px 20px;
+        background-color:green;
+        color:white;
+        border:none;
+        border-radius:5px;
+        margin:5px;
+        }
+input,select,area{
+      margin:8px;
+      padding:6px;
+      }
+
+

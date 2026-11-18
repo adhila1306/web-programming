@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>JS Validation</title>
+</head>
+<body>
+
+<h2>FORM VALIDATION</h2>
+<form name="form" onsubmit="return validateForm()">
+
+<label>Name:</label>
+
+<select name="init" id="init">
+<option value="Mr">Mr</option>
+<option value="Miss">Miss</option>
+<option value="Mrs">Mrs</option>
+</select>
+
+<input type="text" id="fname" name="fname" placeholder="Enter Your Name">
+
+<br><br>
+
+<label>Phone:</label>
+<select>
+<option value="+91">+91</option>
+<option value="+971">+971</option>
+<option value="+966">+966</option>
+</select>
+<input type="tel" name="mob" id="mob" placeholder="Enter Your Phone No">
+
+<br><br>
+
+<label>Email:</label>
+<input type="email" name="email" id="email" placeholder="Enter Your Email">
+
+<br><br>
+<label>password:</label><br>
+<input type="password" id="password" placeholder="Enter your password">
+
+<br><br>
+<label>Gender:</label>
+<input type="radio" name="gender" value="Female">Female
+<input type="radio" name="gender"value="Male">Male
+<input type="radio" name="gender"value="Others">Others
+<br><br>
+<label>Languages known:</label><br>
+<select name="language" id="language">
+<option value="">select language</option>
+<option value="malayalam">Malayalam</option>
+<option value="english">English</option>
+<option value="hindi">Hindi</option>
+<br><br>
+</select><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+
+function validateForm()
+{
+ 
+ var fname=document.form.fname.value.trim();
+ var mob=document.form.mob.value.trim();
+ var email=document.form.email.value.trim();
+ var password=document.form.password.value.trim();
+ var gender=document.querySelector('input[name="gender"]:checked');
+ var language=document.form.language.value.trim();
+ 
+ 
+ if (fname=="")
+ {
+  alert("Enter Name");
+  document.form.fname.focus();
+  return false;
+ }
+ else if(!/^[a-zA-Z\s]+$/.test(fname))
+ {
+  alert("Enter Valid Name");
+  document.form.fname.focus();
+  return false;
+ }
+ 
+ if (mob=="")
+ {
+  alert("Enter Phone Number");
+  document.form.mob.focus();
+  return false;
+ }
+ else if(!/^[0-9]{10}$/.test(mob))
+ {
+  alert("Enter Valid 10 Digit Phone Number");
+  document.form.mob.focus();
+  return false;
+ }
+ 
+ if (email=="")
+ {
+  alert("Enter Email");
+  document.form.email.focus();
+  return false;
+ }
+ else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+ {
+  alert("Enter Valid email");
+  document.form.email.focus();
+  return false;
+ }
+ if(password=="")
+ {
+ alert("Enter password");
+ document.form.password.focus();
+ return false;
+ }
+ else if(password.length<8)
+ {
+ alert("password must contain minimum 8 characters");
+ document.form.password.focus();
+ return false;
+ }
+ 
+ if(!gender)
+ {
+ alert("select gender");
+ return false;
+ }
+ if(language=="")
+ {
+ alert("select languages known");
+ document.form.language.focus();
+ return false;
+ }
+ 
+  alert("Form Submitted Successfully");
+ return True;
+ 
+}
+
+</script>
+</body>
+</html>
